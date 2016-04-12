@@ -1,0 +1,32 @@
+  <!DOCTYPE html>
+  <html lang="pt-br" ng-app="Memoria">
+  <head>
+    <meta charset="utf-8">
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body>
+  <div class="container" ng-controller="jogo">
+    <h2>Jogo da Memória (A Caverna do Dragão)</h2>
+    <button ng-click="iniciarJogo()" type="button" class="btn btn-danger">Iniciar jogo</button>
+      <div class="row">
+
+        <div class="col-xs-12">
+          <img  id="imgSelect" ng-src="{{imgSelect}}" alt="" ng-repeat="imgSelect in panel track by $index"
+          ng-click="jogar(imgSelect,$index)"/>
+        </div>
+      </div>
+      <div class="col-xs-12">
+      </br><span>Acertos: {{acerto}}</span>
+        <span>Tempo de jogo: {{counter}}</span>
+        <span>Level: {{level}}</span>
+      </div>
+   </div>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/controllers.js"></script>
+  </body>
+  </html>
